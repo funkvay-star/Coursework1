@@ -65,11 +65,11 @@ public class PlayerHealthController : MonoBehaviour
 		}
 	}
 
-	public void TakeDamage()
+	public void TakeDamage(int damage)
 	{
 		if (_invincibleCounter <= 0)
 		{
-			--_currentHealth;
+			_currentHealth -= damage;
 
 			if (_currentHealth <= 0)
 			{

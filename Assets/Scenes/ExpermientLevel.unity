@@ -1117,7 +1117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852567209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -1.22, z: 0}
+  m_LocalPosition: {x: -0.07, y: -1.191, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1178,7 +1178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _waitAfterAttack: 0.5
-  _hitStrength: 40
+  _hitStrength: 1
   obstacleRayObject: {fileID: 1597207615}
   _isArmed: 0
 --- !u!1 &868922565
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c12c9d434d92e6479e96a78d9e3e750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 3
   _deathEffect: {fileID: 6199328569416137888, guid: f9ee3f67c1a00aa43b4cfa6a89f85c5f, type: 3}
   _collectible: {fileID: 6395640589882545252, guid: 6bc2cba76b60cd4448549a6124a5075f, type: 3}
   _chanceOfDrop: 25
@@ -1406,6 +1406,7 @@ GameObject:
   - component: {fileID: 1008504849}
   - component: {fileID: 1008504850}
   - component: {fileID: 1008504851}
+  - component: {fileID: 1008504852}
   m_Layer: 0
   m_Name: EnemyKnight1
   m_TagString: Untagged
@@ -1553,10 +1554,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.36694717, y: -0.21925855}
+  m_Offset: {x: 0.36694717, y: -0.18726265}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1567,8 +1568,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9007149, y: 1.0438519}
+  m_Size: {x: 0.9007149, y: 1.1078436}
   m_EdgeRadius: 0
+--- !u!114 &1008504852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008504845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e48b2dfc9f2ff49938355a5dddcad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitStrength: 2
+  _waitAfterAttack: 1
 --- !u!4 &1009169212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8436470171528629434, guid: f148a448baa539a49aa8205d86f1a4fa, type: 3}
@@ -6115,7 +6130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c12c9d434d92e6479e96a78d9e3e750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 20
+  _health: 1
   _deathEffect: {fileID: 6199328569416137888, guid: f9ee3f67c1a00aa43b4cfa6a89f85c5f, type: 3}
   _collectible: {fileID: 8436470171528629437, guid: f148a448baa539a49aa8205d86f1a4fa, type: 3}
   _chanceOfDrop: 50
@@ -7214,6 +7229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18afe57f22c59644d9b9f3a37214d6f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 1
 --- !u!61 &1869959945
 BoxCollider2D:
   m_ObjectHideFlags: 0

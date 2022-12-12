@@ -5,6 +5,11 @@ using UnityEngine;
 public class EnemyHealthControll : MonoBehaviour
 {
     [SerializeField] private int _health;
+	public int Health
+	{
+		get { return _health; }
+	}
+
 	[SerializeField] private GameObject _deathEffect;
 	[SerializeField] private GameObject _collectible;
 	[SerializeField, Range(0, 100)] private float _chanceOfDrop;

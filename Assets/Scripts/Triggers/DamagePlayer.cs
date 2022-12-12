@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
+	[SerializeField] private int _damage;
+
 	//[SerializeField] private PlayerHealthController _playerHealth; 
 
 	// Start is called before the first frame update
@@ -25,7 +27,7 @@ public class DamagePlayer : MonoBehaviour
 			//_playerHealth.TakeDamage();
 			//FindObjectOfType<PlayerHealthController>().TakeDamage();
 
-			PlayerHealthController._instance.TakeDamage();
+			PlayerHealthController._instance.TakeDamage(_damage);
 		}
 	}
 }

@@ -24,18 +24,19 @@ public class StompBox : MonoBehaviour
     {
         if(other.tag == "EasyEnemy")
         {
-            other.transform.parent.gameObject.SetActive(false);
+            //other.transform.parent.gameObject.SetActive(false);
 
-            Instantiate(_deathEffect.transform, other.transform.position, other.transform.rotation);
+            //Instantiate(_deathEffect.transform, other.transform.position, other.transform.rotation);
 
-            PlayerMovement._instance.Bounce();
+            //PlayerMovement._instance.Bounce();
 
-            float _dropSelect = Random.Range(0, 100f);
-            
-            if(_dropSelect <= _chanceOfDrop)
-            {
-                Instantiate(_collectible, other.transform.position, other.transform.rotation);
-            }
-        }
+            //float _dropSelect = Random.Range(0, 100f);
+
+            //if(_dropSelect <= _chanceOfDrop)
+            //{
+            //    Instantiate(_collectible, other.transform.position, other.transform.rotation);
+            //}
+			other.GetComponent<EnemyHealthControll>().GetDamage(other.GetComponent<EnemyHealthControll>().Health); // enemy dies because he takes damage equal to the size of his life
+		}
     }
 }
