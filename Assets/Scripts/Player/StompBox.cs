@@ -36,6 +36,7 @@ public class StompBox : MonoBehaviour
             //{
             //    Instantiate(_collectible, other.transform.position, other.transform.rotation);
             //}
+            Debug.Log(other.name);
 			other.GetComponent<EnemyHealthControll>().GetDamage(other.GetComponent<EnemyHealthControll>().Health); // enemy dies because he takes damage equal to the size of his life
 		}
     }

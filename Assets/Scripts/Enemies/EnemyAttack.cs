@@ -29,7 +29,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if(_counterAfterAttack <= 0 && other.tag == "Player")
         {
-            other.GetComponent<PlayerHealthController>().TakeDamage(_hitStrength);
+           // other.GetComponent<PlayerHealthController>().TakeDamage(_hitStrength);
 			_counterAfterAttack = _waitAfterAttack;
 			_animator.SetTrigger("attack");
 		}
