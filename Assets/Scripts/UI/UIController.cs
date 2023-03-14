@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
+using Button = UnityEngine.UI.Button;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
 	public static UIController _instance;
 
-	[SerializeField] private Image _heart1, _heart2, _heart3, _popup;
+	[SerializeField] private Image _heart1, _heart2, _heart3, _popup, _popupQuestion, _popupQuestionImage;
+
+	[SerializeField] private Button _popupQuestionButton1, _popupQuestionButton2, _popupQuestionButton3, _popupQuestionButton4;
 
 	[SerializeField] private Sprite _fullHeart, _halfHeart, _emptyHeart;
 
-	[SerializeField] private Text _gemsText, _popupContent;
+	[SerializeField] private Text _gemsText, _popupContent, _popupQuestionContent;
+
+	[SerializeField] private TextMeshProUGUI _buttonText1, _buttonText2, _buttonText3, _buttonText4;
+
+	private bool _button1, _button2, _button3, _button4;
 
 	private int _conversationIndex;
 
@@ -87,13 +97,21 @@ public class UIController : MonoBehaviour
 		_gemsText.text = LevelManager._instance.Gems.ToString();
 	}
 
-	private void Hide()
+	private void Hide(Image img)
 	{
 		LevelManager._instance._gamePaused = false;
-		_popup.gameObject.SetActive(false);
+		img.gameObject.SetActive(false);
 	}
 
-	public void PopUp(List<string> conversation)
+	private void CheckAnswer(int playerAnswer, int rightAnswer)
+	{
+		if(playerAnswer == rightAnswer)
+		{ 
+
+		}
+	}
+
+	public void PopUp(List<string> conversation, bool dzenovOhan = false)
 	{
 		LevelManager._instance._gamePaused = true;
 		_popup.gameObject.SetActive(true);
@@ -105,15 +123,15 @@ public class UIController : MonoBehaviour
 		IEnumerator ShowNextText()
 		{
 			_popupContent.text = conversation[_conversationIndex];
-			yield return new WaitForSeconds(2f);
+			yield return new WaitForSeconds(1f);
 
-			while(true)
+			while (true)
 			{
-				if(Input.GetKeyUp(KeyCode.Space))
+				if (Input.GetKeyUp(KeyCode.Space))
 				{
 					break;
 				}
-				else 
+				else
 				{
 					yield return null;
 				}
@@ -121,15 +139,156 @@ public class UIController : MonoBehaviour
 
 			++_conversationIndex;
 
-			if(_conversationIndex < conversation.Count)
+			if (_conversationIndex < conversation.Count)
 			{
 				StartCoroutine(ShowNextText());
 			}
 			else
 			{
-				Hide();
-				PlayerMovement._instance.GiveSword();
+				Hide(_popup);
+				//PlayerMovement._instance.GiveSword();
+				if (dzenovOhan)
+				{
+					PlayerMovement._instance.GiveSword();
+				}
 			}
 		}
+	}
+
+	//	public void PopUpQuestion(List<string> conversation)
+	//	{
+	//		LevelManager._instance._gamePaused = true;
+	//		_popupQuestion.gameObject.SetActive(true);
+
+	//		_conversationIndex = 0;
+
+	//		StartCoroutine(ShowNextText());
+
+	//		IEnumerator ShowNextText()
+	//		{
+	//			_popupQuestionContent.text = conversation[_conversationIndex];
+	//			yield return new WaitForSeconds(1f);
+
+	//			while (true)
+	//			{
+	//				if (Input.GetKeyUp(KeyCode.Space))
+	//				{
+	//					break;
+	//				}
+	//				else
+	//				{
+	//					yield return null;
+	//				}
+	//			}
+
+	//			++_conversationIndex;
+
+	//			if (_conversationIndex < conversation.Count)
+	//			{
+	//				StartCoroutine(ShowNextText());
+	//			}
+	//			else
+	//			{
+	//				Hide(_popupQuestion);
+	//				//PlayerMovement._instance.GiveSword();
+	//			}
+	//		}
+	//	}
+	//}
+
+	public void PopUpQuestion(List<string> question, List<string> answers, int rightAnswer)
+	{
+		LevelManager._instance._gamePaused = true;
+		_popupQuestion.gameObject.SetActive(true);
+
+		_conversationIndex = 0;
+
+		StartCoroutine(ShowNextText());
+
+		IEnumerator ShowNextText()
+		{
+			_popupQuestionContent.text = question[_conversationIndex];
+			//Text buttonText1 = _popupQuestionButton1.GetComponentInChildren<Text>();
+			//Text buttonText2 = _popupQuestionButton2.GetComponentInChildren<Text>();
+			//Text buttonText3 = _popupQuestionButton3.GetComponentInChildren<Text>();
+			//Text buttonText4 = _popupQuestionButton4.GetComponentInChildren<Text>();
+
+			_buttonText1.text = answers[0];
+			_buttonText2.text = answers[1];
+			_buttonText3.text = answers[2];
+			_buttonText4.text = answers[3];
+
+			//buttonText1.text = answers[0];
+			//buttonText2.text = answers[1];
+			//buttonText3.text = answers[2];
+			//buttonText4.text = answers[3];
+
+			int playerAnswer = -1;
+
+			yield return new WaitForSeconds(1f);
+
+			while (true)
+			{
+				// Check if any of the buttons were pressed
+				if (_button1)
+				{
+					// Do something with button 1
+					Debug.Log("Button 1 was pressed");
+					playerAnswer = 1;
+					_button1 = false; // reset the button flag
+
+					CheckAnswer(playerAnswer, rightAnswer);
+					break;
+				}
+				else if (_button2)
+				{
+					// Do something with button 2
+					Debug.Log("Button 2 was pressed");
+					playerAnswer = 2;
+					_button2 = false; // reset the button flag
+					CheckAnswer(playerAnswer, rightAnswer);
+					break;
+				}
+				else if (_button3)
+				{
+					// Do something with button 3
+					Debug.Log("Button 3 was pressed");
+					playerAnswer = 3;
+					_button3 = false; // reset the button flag
+					CheckAnswer(playerAnswer, rightAnswer);
+					break;
+				}
+				else if (_button4)
+				{
+					// Do something with button 4
+					Debug.Log("Button 4 was pressed");
+					playerAnswer = 4;
+					_button4 = false; // reset the button flag
+					CheckAnswer(playerAnswer, rightAnswer);
+					break;
+				}
+
+				yield return new WaitForSeconds(1f);
+
+				yield return null;
+			}
+
+			++_conversationIndex;
+
+			if (_conversationIndex < question.Count)
+			{
+				StartCoroutine(ShowNextText());
+			}
+			else
+			{
+				Hide(_popupQuestion);
+			}
+		}
+
+		// Add button event listeners
+		_popupQuestionButton1.onClick.AddListener(() => _button1 = true);
+		_popupQuestionButton2.onClick.AddListener(() => _button2 = true);
+		_popupQuestionButton3.onClick.AddListener(() => _button3 = true);
+		_popupQuestionButton4.onClick.AddListener(() => _button4 = true);
 	}
 }

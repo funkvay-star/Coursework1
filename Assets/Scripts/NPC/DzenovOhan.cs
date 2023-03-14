@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class DzenovOhan : MonoBehaviour
 {
-	List<string> _conversation = new List<string> { "1", "2", "3", "4"};
+	List<string> _conversation = new List<string> { "1", "2"};
 	bool _firstTriggerEnter;
 
 	// Start is called before the first frame update
@@ -25,7 +25,7 @@ public class DzenovOhan : MonoBehaviour
 		if (other.tag == "Player" && !_firstTriggerEnter)
 		{
 			_firstTriggerEnter = true;
-			UIController._instance.PopUp(_conversation);
+			UIController._instance.PopUp(_conversation, true);
 		}
 	}
 }

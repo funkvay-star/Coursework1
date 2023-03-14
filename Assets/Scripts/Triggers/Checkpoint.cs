@@ -8,6 +8,8 @@ public class Checkpoint : MonoBehaviour
 
     private SpriteRenderer _theSR;
 
+	[SerializeField] private DamagePlayer _dmPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,9 @@ public class Checkpoint : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            CheckpointController._instance.DeactivateCheckpoints();
+            //_dmPlayer.DamagePlayerMethod();
+
+			CheckpointController._instance.DeactivateCheckpoints();
             CheckpointController._instance.SetNewSpawnPoint(transform.position);
 
             _theSR.sprite = _checkpointOn;

@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
 
 	[SerializeField] private float _maxHeight, _minHeight;
 
+	private PlayerMovement _playerMov;
+
 	private float _lastXPosition;
 
 	// Start is called before the first frame update

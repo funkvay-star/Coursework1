@@ -30,4 +30,11 @@ public class DamagePlayer : MonoBehaviour
 			PlayerHealthController._instance.TakeDamage(_damage);
 		}
 	}
+
+	public void DamagePlayerMethod()
+	{
+		
+		PlayerHealthController._instance.TakeDamage(_damage);
+
+	}
 }
