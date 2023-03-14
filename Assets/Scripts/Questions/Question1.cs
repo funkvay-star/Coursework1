@@ -1,13 +1,13 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Question1 : MonoBehaviour
 {
-	//List<string> _question = new List<string> {"??? ??? ????? ???????"};
+	//List<string> _question = new List<string> {"Дратути"};
 	//List<string> _answers = new List<string> { "???????", "??????? ????", "???? ?????", "??????? ????" };
 
-	List<string> _question = new List<string> { "Who's Davids father?" };
+	List<string> _question = new List<string> { "Артём?" };
 	List<string> _answers = new List<string> { "Sanasar", "Mher junior", "Uncle Toros", "Mher senior" };
 	bool _firstTriggerEnter;
 
