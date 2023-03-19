@@ -22,6 +22,8 @@ public class EnemyController : MonoBehaviour
     public float _waitTime, _moveTime;
     private float _waitCount, _moveCount;
 
+    private int _counterTest = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +43,9 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_moveCount > 0)
-        {
+		//Debug.Log("Update t: " + _counterTest++ + " " + (GetComponent<EnemyAttack>()?.IsAttacking ?? false));
+		if (_moveCount > 0) //&& !(GetComponent<EnemyAttack>()?.IsAttacking ?? false)) // '?.' if returns null (GetComponent<EnemyAttack>() then don't throw exception. if GetComponent<EnemyAttack>()?.IsAttacking is null, then '?? false' will return 'false' 
+		{
 			_moveCount -= Time.deltaTime;
 
 			if (transform.position.x > _rightPoint.position.x)
@@ -74,7 +77,7 @@ public class EnemyController : MonoBehaviour
 
             _animator.SetBool("isMoving", true);
 		}
-        else if(_waitCount > 0)
+        else if(_waitCount > 0)// && !(GetComponent<EnemyAttack>()?.IsAttacking ?? false))
         {
             _waitCount -= Time.deltaTime;
             _theRB.velocity = new Vector2(0f, _theRB.velocity.y);
@@ -86,6 +89,12 @@ public class EnemyController : MonoBehaviour
 
 			_animator.SetBool("isMoving", false);
 		}
+        
+  //      if((GetComponent<EnemyAttack>()?.IsAttacking ?? false))
+  //      {
+		//	_theRB.velocity = new Vector2(0f, _theRB.velocity.y);
+		//	_animator.SetBool("isMoving", false);
+		//}
     }
 
     private int ShouldLookOtherWay(bool checker)

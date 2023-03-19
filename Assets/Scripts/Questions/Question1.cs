@@ -7,8 +7,8 @@ public class Question1 : MonoBehaviour
 	//List<string> _question = new List<string> {"Дратути"};
 	//List<string> _answers = new List<string> { "???????", "??????? ????", "???? ?????", "??????? ????" };
 
-	List<string> _question = new List<string> { "Артём?" };
-	List<string> _answers = new List<string> { "Sanasar", "Mher junior", "Uncle Toros", "Mher senior" };
+	List<string> _question = new List<string> { "Кто был отцом Давида?" };
+	List<string> _answers = new List<string> { "Санасар", "Младший Мгер", "Дядя Торос", "Старший Мгер" };
 	bool _firstTriggerEnter;
 
 	// Start is called before the first frame update
