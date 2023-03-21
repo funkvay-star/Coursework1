@@ -174,6 +174,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
+      objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
       value: Spikes (7)
@@ -989,6 +997,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
+      objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
       value: Spikes (4)
@@ -1559,6 +1575,8 @@ MonoBehaviour:
   _middleBackground: {fileID: 756870939}
   _maxHeight: 4
   _minHeight: -2
+  cameraWindow: {x: 2, y: 2}
+  smoothTime: 0.3
 --- !u!1 &527995311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1615,8 @@ MonoBehaviour:
   _leftPoint: {fileID: 587187418}
   _rightPoint: {fileID: 559200889}
   _lookOtherWay: 0
+  playerDetectRange: 5
+  playerStopChasingRange: 8
   _theSR: {fileID: 1784932066}
   _waitTime: 1
   _moveTime: 3
@@ -2237,6 +2257,8 @@ MonoBehaviour:
   _leftPoint: {fileID: 315513845}
   _rightPoint: {fileID: 934489902}
   _lookOtherWay: 0
+  playerDetectRange: 5
+  playerStopChasingRange: 8
   _theSR: {fileID: 189440650}
   _waitTime: 2
   _moveTime: 5
@@ -2743,6 +2765,8 @@ MonoBehaviour:
   _leftPoint: {fileID: 1775087836}
   _rightPoint: {fileID: 1704755629}
   _lookOtherWay: 0
+  playerDetectRange: 5
+  playerStopChasingRange: 8
   _theSR: {fileID: 181485405}
   _waitTime: 2
   _moveTime: 5
@@ -3325,6 +3349,8 @@ MonoBehaviour:
   _leftPoint: {fileID: 1847186978}
   _rightPoint: {fileID: 1284078110}
   _lookOtherWay: 0
+  playerDetectRange: 5
+  playerStopChasingRange: 8
   _theSR: {fileID: 868922568}
   _waitTime: 2
   _moveTime: 5
@@ -3476,6 +3502,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
+      objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
       value: Spikes (2)
@@ -3542,6 +3576,14 @@ PrefabInstance:
     - target: {fileID: 5542555721734248523, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
       objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
@@ -5786,8 +5828,8 @@ Tilemap:
   - first: {x: 6, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9165,11 +9207,11 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 71
+  - m_RefCount: 72
     m_Data: {fileID: 11400000, guid: 6833248b48473a54987c5c8c6b1c321a, type: 2}
   - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: e68afc8392f7a304180b7ec41e9782f6, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: dfe431d9d65303d4185f7a521244e97c, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 4c706182adea5fc42a0ae8e9451163ae, type: 2}
@@ -9192,11 +9234,11 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 231841ade33ac5b4db7ce530abfccb00, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 71
+  - m_RefCount: 72
     m_Data: {fileID: -5463897620222462305, guid: 9bcfd10f4b117ea4ebb5682e5337e612, type: 3}
   - m_RefCount: 22
     m_Data: {fileID: 3287848783686573333, guid: 9bcfd10f4b117ea4ebb5682e5337e612, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: -5011925379321002501, guid: 9bcfd10f4b117ea4ebb5682e5337e612, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 8094085342786833245, guid: 9bcfd10f4b117ea4ebb5682e5337e612, type: 3}
@@ -9284,17 +9326,7 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1075444105}
     m_ColliderPaths:
-    - - X: 890000100
-        Y: -50000041
-      - X: 890000100
-        Y: 10000041
-      - X: 890000041
-        Y: 10000100
-      - X: 729999959
-        Y: 10000100
-      - X: 729999900
-        Y: 10000041
-      - X: 729999900
+    - - X: 890000000
         Y: 10000000
       - X: 580000000
         Y: 10000000
@@ -9323,39 +9355,31 @@ CompositeCollider2D:
       - X: 70000000
         Y: -10000000
       - X: 70000000
+        Y: -19999900
+      - X: 59999959
+        Y: -19999900
+      - X: 59999900
+        Y: -19999959
+      - X: 59999900
         Y: -20000000
       - X: -30000000
         Y: -20000000
       - X: -30000000
         Y: -50000000
-      - X: 729999900
+      - X: 890000000
         Y: -50000000
-      - X: 729999900
-        Y: -50000041
-      - X: 729999959
-        Y: -50000100
-      - X: 890000041
-        Y: -50000100
-    - - X: -39999900
-        Y: -80000041
-      - X: -39999900
-        Y: -39999959
-      - X: -39999959
-        Y: -39999900
-      - X: -90000041
-        Y: -39999900
-      - X: -90000100
-        Y: -39999959
-      - X: -90000100
-        Y: -80000041
-      - X: -90000041
-        Y: -80000100
-      - X: -39999959
-        Y: -80000100
+    - - X: -40000000
+        Y: -40000000
+      - X: -90000000
+        Y: -40000000
+      - X: -90000000
+        Y: -80000000
+      - X: -40000000
+        Y: -80000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 88.99998, y: -5.00001}
-      - {x: 88.99998, y: 1.00001}
+    - - {x: 88.99997, y: -5}
+      - {x: 88.99997, y: 1}
       - {x: 58, y: 1.0000294}
       - {x: 57.99997, y: 2}
       - {x: 52, y: 1.9999708}
@@ -9369,13 +9393,13 @@ CompositeCollider2D:
       - {x: 14, y: 1.9999708}
       - {x: 13.999971, y: -1}
       - {x: 7, y: -1.0000293}
-      - {x: 6.9999704, y: -2}
+      - {x: 6.9999704, y: -1.99999}
       - {x: -3, y: -2.0000293}
       - {x: -2.999971, y: -5}
-    - - {x: -4.0000253, y: -8.00001}
-      - {x: -4.0000253, y: -3.99999}
-      - {x: -9.00001, y: -4.0000253}
-      - {x: -8.999974, y: -8.00001}
+    - - {x: -4.000029, y: -8}
+      - {x: -4.000029, y: -4}
+      - {x: -9, y: -4.000029}
+      - {x: -8.99997, y: -8}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1075444104
@@ -9622,6 +9646,14 @@ PrefabInstance:
     - target: {fileID: 5542555721734248523, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
       objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
@@ -10217,6 +10249,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
+      objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
       value: Spikes (3)
@@ -10375,8 +10415,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1094444795
-  m_SortingLayer: -2
+  m_SortingLayerID: 1861527453
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc2fc48352056394a8b60d1c02246a03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10578,6 +10618,14 @@ PrefabInstance:
     - target: {fileID: 5542555721734248523, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
       objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
@@ -10847,6 +10895,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
+      objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
       value: Spikes (1)
@@ -10933,8 +10989,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1094444795
-  m_SortingLayer: -2
+  m_SortingLayerID: 1861527453
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc2fc48352056394a8b60d1c02246a03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11294,8 +11350,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1094444795
-  m_SortingLayer: -2
+  m_SortingLayerID: 1861527453
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc2fc48352056394a8b60d1c02246a03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11544,8 +11600,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1094444795
-  m_SortingLayer: -2
+  m_SortingLayerID: 1861527453
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc2fc48352056394a8b60d1c02246a03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12268,6 +12324,8 @@ MonoBehaviour:
   _leftPoint: {fileID: 1463681866}
   _rightPoint: {fileID: 2100632578}
   _lookOtherWay: 1
+  playerDetectRange: 5
+  playerStopChasingRange: 8
   _theSR: {fileID: 1384751953}
   _waitTime: 1
   _moveTime: 4
@@ -12419,6 +12477,14 @@ PrefabInstance:
     - target: {fileID: 5542555721734248523, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
       objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name
@@ -12689,6 +12755,14 @@ PrefabInstance:
     - target: {fileID: 5542555721734248523, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542555721734248524, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1861527453
       objectReference: {fileID: 0}
     - target: {fileID: 5542555721734248526, guid: ea5cf7637e2e8c9408baf9c0de1b6fba, type: 3}
       propertyPath: m_Name

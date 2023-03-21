@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\StompBox.cs" />
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\WeaponEffect.cs" />
+    <Compile Include="Assets\Scripts\Triggers\SpikeWave.cs" />
     <Compile Include="Assets\Scripts\WorldController\CheckpointController.cs" />
     <Compile Include="Assets\Scripts\Triggers\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\NPC\DzenovOhan.cs" />
@@ -85,7 +86,6 @@
     <Compile Include="Assets\Scripts\Enemies\EnemyAttack.cs" />
     <Compile Include="Assets\Assets\Medieval_Warriors_Pack\Scripts\Camera16x9.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
-    <Compile Include="Assets\Scripts\Triggers\SpikeWave.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
