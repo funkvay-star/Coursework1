@@ -6,6 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
 	public static PlayerAttack _instance;
 
+	[SerializeField] Transform _attackAnimationObj;
+
 	[SerializeField] private float obstacleRayDistance;
 	[SerializeField] private LayerMask _layerMask;
 	[SerializeField] private float _waitAfterAttack;
@@ -50,17 +52,27 @@ public class PlayerAttack : MonoBehaviour
 		}
 	}
 
+	public  void AAA()
+	{
+		Debug.Log("AAA B");
+	}
+
 	private void Attack()
 	{
 		_animator.SetTrigger("attack");
 
+
+		SpriteRenderer animationObjectRenderer = _attackAnimationObj.GetComponent<SpriteRenderer>();
+
 		if (PlayerMovement._instance.TheSpriteRenderer.flipX)
 		{
 			_characterDirection = -1f;
+			animationObjectRenderer.flipX = true;
 		}
 		else
 		{
 			_characterDirection = 1f;
+			animationObjectRenderer.flipX = false;
 		}
 
 		RaycastHit2D hitObstacle = Physics2D.Raycast(obstacleRayObject.transform.position, Vector2.right * new Vector2(_characterDirection, 0f), obstacleRayDistance, _layerMask);
@@ -77,7 +89,7 @@ public class PlayerAttack : MonoBehaviour
 		else
 		{
 			Debug.DrawRay(obstacleRayObject.transform.position, Vector2.right * obstacleRayDistance * new Vector2(_characterDirection, 0f), Color.green);
-			Debug.Log("No enemy");
+			//Debug.Log("No enemy");
 		}
 	}
 

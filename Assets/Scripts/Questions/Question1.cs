@@ -11,18 +11,6 @@ public class Question1 : MonoBehaviour
 	List<string> _answers = new List<string> { "Санасар", "Младший Мгер", "Дядя Торос", "Старший Мгер" };
 	bool _firstTriggerEnter;
 
-	// Start is called before the first frame update
-	void Start()
-	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
-
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player" && !_firstTriggerEnter)

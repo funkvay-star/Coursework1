@@ -147,102 +147,6 @@ public class UIController : MonoBehaviour
 		}
 	}
 
-	//public void PopUpQuestion(List<string> question, List<string> answers, int rightAnswer)
-	//{
-	//	LevelManager._instance._gamePaused = true;
-	//	_popupQuestion.gameObject.SetActive(true);
-
-	//	_conversationIndex = 0;
-
-	//	StartCoroutine(ShowNextText());
-
-	//	IEnumerator ShowNextText()
-	//	{
-	//		_popupQuestionContent.text = question[_conversationIndex];
-	//		//Text buttonText1 = _popupQuestionButton1.GetComponentInChildren<Text>();
-	//		//Text buttonText2 = _popupQuestionButton2.GetComponentInChildren<Text>();
-	//		//Text buttonText3 = _popupQuestionButton3.GetComponentInChildren<Text>();
-	//		//Text buttonText4 = _popupQuestionButton4.GetComponentInChildren<Text>();
-
-	//		_buttonText1.text = answers[0];
-	//		_buttonText2.text = answers[1];
-	//		_buttonText3.text = answers[2];
-	//		_buttonText4.text = answers[3];
-
-	//		//buttonText1.text = answers[0];
-	//		//buttonText2.text = answers[1];
-	//		//buttonText3.text = answers[2];
-	//		//buttonText4.text = answers[3];
-
-	//		int playerAnswer = -1;
-
-	//		yield return new WaitForSeconds(1f);
-
-	//		while (true)
-	//		{
-	//			// Check if any of the buttons were pressed
-	//			if (_button1)
-	//			{
-	//				// Do something with button 1
-	//				Debug.Log("Button 1 was pressed");
-	//				playerAnswer = 1;
-	//				_button1 = false; // reset the button flag
-
-	//				CheckAnswer(playerAnswer, rightAnswer);
-	//				break;
-	//			}
-	//			else if (_button2)
-	//			{
-	//				// Do something with button 2
-	//				Debug.Log("Button 2 was pressed");
-	//				playerAnswer = 2;
-	//				_button2 = false; // reset the button flag
-	//				CheckAnswer(playerAnswer, rightAnswer);
-	//				break;
-	//			}
-	//			else if (_button3)
-	//			{
-	//				// Do something with button 3
-	//				Debug.Log("Button 3 was pressed");
-	//				playerAnswer = 3;
-	//				_button3 = false; // reset the button flag
-	//				CheckAnswer(playerAnswer, rightAnswer);
-	//				break;
-	//			}
-	//			else if (_button4)
-	//			{
-	//				// Do something with button 4
-	//				Debug.Log("Button 4 was pressed");
-	//				playerAnswer = 4;
-	//				_button4 = false; // reset the button flag
-	//				CheckAnswer(playerAnswer, rightAnswer);
-	//				break;
-	//			}
-
-	//			yield return new WaitForSeconds(1f);
-
-	//			yield return null;
-	//		}
-
-	//		++_conversationIndex;
-
-	//		if (_conversationIndex < question.Count)
-	//		{
-	//			StartCoroutine(ShowNextText());
-	//		}
-	//		else
-	//		{
-	//			Hide(_popupQuestion);
-	//		}
-	//	}
-
-	//	// Add button event listeners
-	//	_popupQuestionButton1.onClick.AddListener(() => _button1 = true);
-	//	_popupQuestionButton2.onClick.AddListener(() => _button2 = true);
-	//	_popupQuestionButton3.onClick.AddListener(() => _button3 = true);
-	//	_popupQuestionButton4.onClick.AddListener(() => _button4 = true);
-	//}
-
 	[SerializeField] private Button _submitAnswerButton;
 
 	private int _playerAnswer = -1;
@@ -343,5 +247,4 @@ public class UIController : MonoBehaviour
 		_popupQuestionButton3.interactable = true;
 		_popupQuestionButton4.interactable = true;
 	}
-
 }

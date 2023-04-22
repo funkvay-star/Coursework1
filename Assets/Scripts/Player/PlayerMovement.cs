@@ -54,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		var a = PlayerHealthController._instance.Health;
+
+		var b = LevelManager._instance._gamePaused;
+
 		if (PlayerHealthController._instance.Health <= 0 || LevelManager._instance._gamePaused)
 		{
 			_playersRigidBody.velocity = new Vector2(0, -5);
@@ -106,6 +110,11 @@ public class PlayerMovement : MonoBehaviour
 
 		_animator.SetBool("isGrounded", _isGrounded);
 		_animator.SetFloat("moveSpeed", Mathf.Abs(_playersRigidBody.velocity.x));
+	}
+
+	public bool IsFacingRight()
+	{
+		return !_theSR.flipX;
 	}
 
 	public void KnockBack()
