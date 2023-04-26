@@ -120,10 +120,26 @@ public class PlayerMovement : MonoBehaviour
 	public void KnockBack()
 	{
 		_knockBackCounter = _knockBackLength;
+		
 		_playersRigidBody.velocity = new Vector2(0, _knockBackForce);
 
 		_animator.SetTrigger("hurt");
 	}
+
+	public void WindKnockBack(bool knockBackToLeft)
+	{
+		_knockBackCounter = _knockBackLength;
+
+		float horizontalForce = knockBackToLeft ? -_knockBackForce : _knockBackForce;
+		horizontalForce *= 50;
+		Debug.Log(horizontalForce);
+
+		// Set the player's horizontal velocity directly
+		_playersRigidBody.velocity = new Vector2(horizontalForce, 0);
+
+		_animator.SetTrigger("hurt");
+	}
+
 
 	public void Bounce()
 	{

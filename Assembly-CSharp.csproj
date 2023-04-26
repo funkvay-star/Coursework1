@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\Player\KillPlayer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Enemies\MsraMelik\MsraMelikMovement.cs" />
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\WeaponProjectile.cs" />
     <Compile Include="Assets\Scripts\Intecration\PickUp.cs" />
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\HorizontalProjectile.cs" />
@@ -85,8 +86,10 @@
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\BlastProjectile.cs" />
     <Compile Include="Assets\Assets\Medieval_Warriors_Pack\Scripts\Example_Motion_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemies\MsraMelik\MsraMelikHealth.cs" />
     <Compile Include="Assets\Assets\Medieval_Warriors_Pack\Scripts\Camera16x9.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemies\MsraMelik\MsraMelikAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

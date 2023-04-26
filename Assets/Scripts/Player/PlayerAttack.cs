@@ -50,11 +50,12 @@ public class PlayerAttack : MonoBehaviour
 			Attack();
 			_counterAfterAttack = _waitAfterAttack;
 		}
-	}
 
-	public  void AAA()
-	{
-		Debug.Log("AAA B");
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			//MsraMelikHealth._instance.MakeUnkillable();
+			MsraMelikAttack._instance.SpawnWindEffect();
+		}
 	}
 
 	private void Attack()

@@ -65,7 +65,7 @@ public class PlayerHealthController : MonoBehaviour
 		}
 	}
 
-	public void TakeDamage(int damage)
+	public void TakeDamage(int damage, bool _damageFromWind = false)
 	{
 		if (_invincibleCounter <= 0)
 		{
@@ -82,7 +82,32 @@ public class PlayerHealthController : MonoBehaviour
 				_invincibleCounter = _invincibleLength;
 				_theSR.color = new Color(_theSR.color.r, _theSR.color.g, _theSR.color.b, 0.5f);
 
-				PlayerMovement._instance.KnockBack();
+				if (!_damageFromWind)
+				{
+					PlayerMovement._instance.KnockBack();
+				}
+			}
+
+			UIController._instance.UpdateHealthDisplay();
+		}
+	}
+
+	public void TakeWindDamage(int damage)
+	{
+		if (_invincibleCounter <= 0)
+		{
+			_currentHealth -= damage;
+
+			if (_currentHealth <= 0)
+			{
+				_currentHealth = 0;
+
+				LevelManager._instance.RespawnPlayer();
+			}
+			else
+			{
+				_invincibleCounter = _invincibleLength;
+				_theSR.color = new Color(_theSR.color.r, _theSR.color.g, _theSR.color.b, 0.5f);
 			}
 
 			UIController._instance.UpdateHealthDisplay();
