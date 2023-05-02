@@ -85,11 +85,11 @@
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\LightningStrike.cs" />
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\BlastProjectile.cs" />
     <Compile Include="Assets\Assets\Medieval_Warriors_Pack\Scripts\Example_Motion_Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemies\MsraMelik\MsraMelikAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\MsraMelik\MsraMelikHealth.cs" />
     <Compile Include="Assets\Assets\Medieval_Warriors_Pack\Scripts\Camera16x9.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
-    <Compile Include="Assets\Scripts\Enemies\MsraMelik\MsraMelikAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -98,7 +98,7 @@
     <None Include="Assets\Assets\2D Platformer Assets\Graphics\Credits.txt" />
     <None Include="Assets\Assets\Pixel2DCastleTileset\about.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\Assets\Cainos\Pixel Art Platformer - Village Props\Changelog.txt" />
+    <None Include="Assets\Assets\Pixel Art Platformer - Village Props\Changelog.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Assets\FreePixelFood\ReadMe.txt" />

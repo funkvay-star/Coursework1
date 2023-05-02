@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float _jumpForce;
 	[SerializeField] private float _runSpeed;
 	[SerializeField] private Rigidbody2D _playersRigidBody;
+
+	private bool Check;
 	public Rigidbody2D RigidBody
 	{
 		get { return _playersRigidBody; }
@@ -131,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
 		_knockBackCounter = _knockBackLength;
 
 		float horizontalForce = knockBackToLeft ? -_knockBackForce : _knockBackForce;
-		horizontalForce *= 50;
+		horizontalForce *= 2;
 		Debug.Log(horizontalForce);
 
 		// Set the player's horizontal velocity directly

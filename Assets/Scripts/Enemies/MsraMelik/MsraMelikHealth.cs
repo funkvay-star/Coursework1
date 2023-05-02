@@ -6,10 +6,18 @@ public class MsraMelikHealth : MonoBehaviour
 {
 	public static MsraMelikHealth _instance;
 
-	[SerializeField] private int _health;
-	public int Health
+	[SerializeField] private int _currentHealth;
+	[SerializeField] private int _maxHealth;
+
+
+	public int CurrentHealth
 	{
-		get { return _health; }
+		get { return _currentHealth; }
+	}
+
+	public int MaxHealth
+	{
+		get { return _maxHealth; }
 	}
 
 	[SerializeField] private GameObject _deathEffect;
@@ -40,15 +48,20 @@ public class MsraMelikHealth : MonoBehaviour
 	{
 		if (_isUnkillable) return;
 
-		_health -= damage;
+		_currentHealth -= damage;
 
-		Debug.Log(_health);
+		Debug.Log(_currentHealth);
 
-		if (_health <= 0)
+		if (_currentHealth <= 0)
 		{
 			transform.parent.gameObject.SetActive(false);
 
 			Instantiate(_deathEffect.transform, transform.position, transform.rotation);
+		}
+
+		if (_currentHealth <= _maxHealth / 2)
+		{
+			MsraMelikAttack._instance.ActivateSpikeWave();
 		}
 	}
 
