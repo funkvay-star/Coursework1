@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
 		if (PlayerHealthController._instance.Health <= 0 || LevelManager._instance._gamePaused)
 		{
 			_playersRigidBody.velocity = new Vector2(0, -5);
+			_animator.SetBool("isGrounded", true);
 			_animator.SetFloat("moveSpeed", 0);
 			return;
 		}

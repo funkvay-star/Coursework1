@@ -22,6 +22,8 @@ public class UIController : MonoBehaviour
 
 	[SerializeField] private TextMeshProUGUI _buttonText1, _buttonText2, _buttonText3, _buttonText4;
 
+	[SerializeField] private Text _lifeCount;
+
 	private bool _button1, _button2, _button3, _button4;
 
 	private int _conversationIndex;
@@ -35,12 +37,18 @@ public class UIController : MonoBehaviour
 	void Start()
 	{
 		UpdateGems();
+		UpdateLifeCount();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 
+	}
+
+	public void UpdateLifeCount()
+	{
+		_lifeCount.text = PlayerHealthController._instance.Life.ToString() + "x";
 	}
 
 	public void UpdateHealthDisplay()

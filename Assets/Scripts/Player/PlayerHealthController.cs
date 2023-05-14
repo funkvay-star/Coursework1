@@ -6,6 +6,8 @@ public class PlayerHealthController : MonoBehaviour
 {
 	public static PlayerHealthController _instance;
 
+	[SerializeField] private int _maxLifeCount;
+	private int _lifeCount;
 	[SerializeField] private int _maxHealth;
 	private int _currentHealth;
 
@@ -14,9 +16,34 @@ public class PlayerHealthController : MonoBehaviour
 
 	private SpriteRenderer _theSR;
 
+	public int MaxLife
+	{
+		get { return _maxLifeCount; }
+	}
+
+	public int Life
+	{
+		get { return _lifeCount; }
+		set
+		{
+			if (value > 0 && value <= _maxLifeCount)
+			{
+				_lifeCount = value;
+			}
+			else if (value <= 0)
+			{
+				LevelChanger._instance.EndGame();
+			}
+			else
+			{
+				_lifeCount = _maxLifeCount;
+			}
+		}
+	}
+
 	public int MaxHealth
 	{
-		get { return _maxHealth;  }
+		get { return _maxHealth; }
 	}
 
 	public int Health
@@ -49,6 +76,7 @@ public class PlayerHealthController : MonoBehaviour
 	{
 		_theSR = GetComponent<SpriteRenderer>();
 		_currentHealth = _maxHealth;
+		_lifeCount = _maxLifeCount;
 	}
 
 	// Update is called once per frame

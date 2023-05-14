@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\NPC\DzenovOhan.cs" />
     <Compile Include="Assets\Scripts\Questions\Question1.cs" />
     <Compile Include="Assets\Scripts\NPC\MotherOfDavit.cs" />
+    <Compile Include="Assets\Scripts\LevelChanger\LevelEndTrigger.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealthController.cs" />
     <Compile Include="Assets\Scripts\Triggers\DestroyOverTime.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\LightningBlast.cs" />
     <Compile Include="Assets\Assets\RPG_Heroes\Environment\SpriteCharacterController.cs" />
     <Compile Include="Assets\Scripts\Triggers\Checkpoint.cs" />
+    <Compile Include="Assets\Scripts\LevelChanger\LevelChanger.cs" />
     <Compile Include="Assets\Assets\Medieval_Warriors_Pack\Scripts\Example_Motion_Attack_Shield_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyHealthControll.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyController.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Assets\Scripts\Enemies\MsraMelik\MsraMelikHealth.cs" />
     <Compile Include="Assets\Assets\Medieval_Warriors_Pack\Scripts\Camera16x9.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

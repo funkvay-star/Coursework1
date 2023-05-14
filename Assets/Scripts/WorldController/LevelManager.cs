@@ -59,7 +59,10 @@ public class LevelManager : MonoBehaviour
 		yield return new WaitForSeconds(_waitToRespawn);
 
 		RestorePlayerAfterRespawn();
-    }
+
+        --PlayerHealthController._instance.Life;
+        UIController._instance.UpdateLifeCount();
+	}
 
     private void RestorePlayerAfterRespawn()
     {

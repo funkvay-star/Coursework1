@@ -30,7 +30,7 @@ public class EnemyHealthControll : MonoBehaviour
     {
         _health -= damage;
 
-        Debug.Log(_health);
+        //Debug.Log(_health);
 
         if(_health <= 0)
         {
