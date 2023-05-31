@@ -26,7 +26,7 @@ public class PlayerHealthController : MonoBehaviour
 		get { return _lifeCount; }
 		set
 		{
-			PrintStackTrace();
+			//PrintStackTrace();
 			if (value > 0 && value <= _maxLifeCount)
 			{
 				_lifeCount = value;
@@ -43,8 +43,8 @@ public class PlayerHealthController : MonoBehaviour
 	}
 	private void PrintStackTrace()
 	{
-		System.Diagnostics.StackTrace stackTrace = new System.Diagnostics.StackTrace();
-		Debug.Log(stackTrace.ToString());
+		//System.Diagnostics.StackTrace stackTrace = new System.Diagnostics.StackTrace();
+		//Debug.Log(stackTrace.ToString());
 	}
 
 	public int MaxHealth

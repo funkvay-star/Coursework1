@@ -48,6 +48,9 @@ TagManager:
   - name: MiddleBackground
     uniqueID: 1861527453
     locked: 0
+  - name: Decortaions
+    uniqueID: 2276074457
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
