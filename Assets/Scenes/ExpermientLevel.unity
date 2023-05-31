@@ -1495,7 +1495,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 365048844}
-  m_Layer: 0
+  - component: {fileID: 365048845}
+  m_Layer: 10
   m_Name: MsraMelik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365048843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113.85, y: 1.64, z: -0.08018544}
+  m_LocalPosition: {x: 113.85, y: 1.57, z: -0.08018544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1519,6 +1520,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &365048845
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365048843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70b69d128baadab4491004eb9c52215c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &368791072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,10 +1725,10 @@ RectTransform:
   m_Father: {fileID: 1296803921}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -358.26, y: 134.985}
-  m_SizeDelta: {x: 50.872, y: 50.5062}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -758.26, y: -91}
+  m_SizeDelta: {x: 50.87201, y: 50.506195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &384846687
 MonoBehaviour:
@@ -3960,7 +3981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852567209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 0.58, z: 0}
+  m_LocalPosition: {x: 109.25, y: 5.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4022,7 +4043,7 @@ MonoBehaviour:
   obstacleRayDistance: 2
   _layerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   _waitAfterAttack: 1
   _hitStrength: 1
   obstacleRayObject: {fileID: 1597207615}
@@ -14286,9 +14307,9 @@ GameObject:
   - component: {fileID: 1392124213}
   - component: {fileID: 1392124212}
   - component: {fileID: 1392124217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MsraMelikSprite
-  m_TagString: Untagged
+  m_TagString: MsraMelik
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14328,8 +14349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d7d5e5a13486746b14104cc3a8161e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 0
-  _maxHealth: 0
+  _currentHealth: 10
+  _maxHealth: 10
   _deathEffect: {fileID: 6199328569416137888, guid: f9ee3f67c1a00aa43b4cfa6a89f85c5f, type: 3}
   _spriteRenderer: {fileID: 1392124216}
   _unkillableStartDuration: 5
@@ -14476,6 +14497,7 @@ MonoBehaviour:
   _spawnRockDuration: 30
   _playerTransform: {fileID: 852567214}
   _aimAtPlayerProbability: 0.3
+  _attackDistance: 2.5
   _arrowPrefab: {fileID: 6421688237495797078, guid: db0454c241056ae4d8c9e2f33dc182b1, type: 3}
   _leftUp: {fileID: 1660446400}
   _leftDown: {fileID: 1321288750}

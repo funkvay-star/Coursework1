@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
 		float horizontalForce = knockBackToLeft ? -_knockBackForce : _knockBackForce;
 		horizontalForce *= 2;
-		Debug.Log(horizontalForce);
+		//Debug.Log(horizontalForce);
 
 		// Set the player's horizontal velocity directly
 		_playersRigidBody.velocity = new Vector2(horizontalForce, 0);

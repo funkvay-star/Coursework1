@@ -27,6 +27,8 @@ public class MsraMelikHealth : MonoBehaviour
 	[SerializeField] private float _transparentAlpha = 0.5f;
 	private bool _isUnkillable = false;
 
+	private Color originalColor;
+
 	private void Awake()
 	{
 		_instance = this;
@@ -35,7 +37,10 @@ public class MsraMelikHealth : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
+		// Save the original color
+		originalColor = spriteRenderer.color;
 	}
 
 	// Update is called once per frame
@@ -63,6 +68,38 @@ public class MsraMelikHealth : MonoBehaviour
 		{
 			MsraMelikAttack._instance.ActivateSpikeWave();
 		}
+
+		// Start a new ChangeColor coroutine
+		//StartCoroutine(ChangeColor());
+
+		MsraMelikAttack._instance.CheckPlayerDistanceAndAttack();
+
+		MakeUnkillable();
+	}
+
+	private IEnumerator ChangeColor()
+	{
+		// Get the SpriteRenderer component
+		SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+		// Wait for 0.5 seconds before changing the color
+		yield return new WaitForSeconds(0.5f);
+
+		// Set the color to translucent red
+		spriteRenderer.color = new Color(1, 0, 0, 0.5f);
+
+		// Wait for 0.5 seconds while the object is red
+		yield return new WaitForSeconds(0.5f);
+
+		// Gradually return to the original color over 0.5 seconds
+		for (float t = 0; t < 0.5f; t += Time.deltaTime)
+		{
+			spriteRenderer.color = Color.Lerp(new Color(1, 0, 0, 0.5f), originalColor, t / 0.5f);
+			yield return null;
+		}
+
+		// Ensure the color is set to the original color at the end
+		spriteRenderer.color = originalColor;
 	}
 
 	public void MakeUnkillable()

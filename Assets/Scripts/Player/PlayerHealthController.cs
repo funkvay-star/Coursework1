@@ -26,6 +26,7 @@ public class PlayerHealthController : MonoBehaviour
 		get { return _lifeCount; }
 		set
 		{
+			PrintStackTrace();
 			if (value > 0 && value <= _maxLifeCount)
 			{
 				_lifeCount = value;
@@ -39,6 +40,11 @@ public class PlayerHealthController : MonoBehaviour
 				_lifeCount = _maxLifeCount;
 			}
 		}
+	}
+	private void PrintStackTrace()
+	{
+		System.Diagnostics.StackTrace stackTrace = new System.Diagnostics.StackTrace();
+		Debug.Log(stackTrace.ToString());
 	}
 
 	public int MaxHealth
@@ -104,6 +110,9 @@ public class PlayerHealthController : MonoBehaviour
 				_currentHealth = 0;
 
 				LevelManager._instance.RespawnPlayer();
+				_currentHealth = MaxHealth;
+				LevelManager._instance._gamePaused = true;
+				//_invincibleCounter = _invincibleLength;
 			}
 			else
 			{

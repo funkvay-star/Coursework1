@@ -62,6 +62,8 @@ public class LevelManager : MonoBehaviour
 
         --PlayerHealthController._instance.Life;
         UIController._instance.UpdateLifeCount();
+
+		_gamePaused = false;
 	}
 
     private void RestorePlayerAfterRespawn()

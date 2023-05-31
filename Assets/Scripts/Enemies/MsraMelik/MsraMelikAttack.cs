@@ -21,6 +21,7 @@ public class MsraMelikAttack : MonoBehaviour
 
 	[SerializeField] private Transform _playerTransform;
 	[SerializeField] private float _aimAtPlayerProbability = 0.5f; // Probability of aiming at the player (0 to 1)
+	[SerializeField] private float _attackDistance; // Distance at which attack will trigger
 
 
 	// ARROWS
@@ -50,8 +51,76 @@ public class MsraMelikAttack : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+		//CheckPlayerDistanceAndAttack();
 	}
+
+	private IEnumerator DelayedAttack(float delayTime)
+	{
+		yield return new WaitForSeconds(delayTime);
+
+		int rand = Random.Range(0, 10);
+
+		if (rand % 2 == 0)
+		{
+			Debug.Log("ThrowRocks called");
+			ThrowRocks();
+		}
+		else
+		{
+			Debug.Log("FireArrows called");
+			FireArrows();
+		}
+	}
+
+	public void CheckPlayerDistanceAndAttack()
+	{
+		float distance = Vector3.Distance(transform.position, _playerTransform.position);
+		//Debug.Log($"Distance to player: {distance}, Attack Distance: {_attackDistance}");
+
+		if (distance <= _attackDistance)
+		{
+			int rand = Random.Range(0, 10); // Generate a random integer between 0 and 9
+											//Debug.Log($"Random value: {rand}");
+
+			if (rand % 2 == 0) // If the number is even
+			{
+				Debug.Log("SpawnWindEffect called");
+				SpawnWindEffect();
+			}
+			else // If the number is odd
+			{
+				Debug.Log("AttackWithSword called");
+				AttackWithSword();
+			}
+		}
+
+		StartCoroutine(DelayedAttack(1.0f)); // Call ThrowRocks or FireArrows after 1 second
+	}
+
+	private IEnumerator DelayedDamage(int damage, float delayTime)
+	{
+		yield return new WaitForSeconds(delayTime);
+		PlayerHealthController._instance.TakeDamage(damage);
+	}
+
+	private void AttackWithSword()
+	{
+		// Get the Animator component from the parent object
+		Animator animator = transform.parent.GetComponent<Animator>();
+
+		// Set the "Attack" trigger
+		animator.SetTrigger("Attack");
+
+		// Rest of your AttackWithSword implementation
+
+		// Call the TakeDamage function after a delay of 0.3 seconds
+		if (_playerTransform.position.x < transform.position.x)
+		{
+			// If the player is to the left, call the TakeDamage function after a delay of 0.3 seconds
+			StartCoroutine(DelayedDamage(1, 0.3f));
+		}
+	}
+
 
 	public void ActivateSpikeWave()
 	{

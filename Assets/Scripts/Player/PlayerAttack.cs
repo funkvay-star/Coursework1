@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
 			_counterAfterAttack -= Time.deltaTime;
 		}
 
-		if(Input.GetKeyDown(KeyCode.K) && _isArmed && _counterAfterAttack <= 0)
+		if(Input.GetKeyDown(KeyCode.K) && _isArmed && _counterAfterAttack <= 0 && !LevelManager._instance._gamePaused)
 		{
 			Attack();
 			_counterAfterAttack = _waitAfterAttack;
@@ -87,8 +87,15 @@ public class PlayerAttack : MonoBehaviour
 			Debug.Log("Enemy Detected");
 
 			//hitObstacle.collider.gameObject.SetActive(false);
-			Debug.Log(hitObstacle.collider.tag);
-			hitObstacle.collider.GetComponent<EnemyHealthControll>().GetDamage(_hitStrength);
+			//Debug.Log(hitObstacle.collider.tag);
+			if(hitObstacle.collider.tag == "MsraMelik")
+			{
+				MsraMelikHealth._instance.GetDamage(1);
+			}
+			else
+			{
+				hitObstacle.collider.GetComponent<EnemyHealthControll>().GetDamage(_hitStrength);
+			}
 		}
 		else
 		{
