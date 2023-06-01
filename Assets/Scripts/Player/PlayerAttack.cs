@@ -51,14 +51,14 @@ public class PlayerAttack : MonoBehaviour
 			_counterAfterAttack = _waitAfterAttack;
 		}
 
-		if (Input.GetKeyDown(KeyCode.P))
-		{
-			MsraMelikHealth._instance.MakeUnkillable();
-			MsraMelikAttack._instance.SpawnWindEffect();
-			//MsraMelikAttack._instance.ThrowRocks();
-			//MsraMelikAttack._instance.FireArrows();
-			//MsraMelikAttack._instance.ActivateSpikeWave();
-		}
+		//if (Input.GetKeyDown(KeyCode.P))
+		//{
+		//	MsraMelikHealth._instance.MakeUnkillable();
+		//	MsraMelikAttack._instance.SpawnWindEffect();
+		//	//MsraMelikAttack._instance.ThrowRocks();
+		//	//MsraMelikAttack._instance.FireArrows();
+		//	//MsraMelikAttack._instance.ActivateSpikeWave();
+		//}
 	}
 
 	private void Attack()
